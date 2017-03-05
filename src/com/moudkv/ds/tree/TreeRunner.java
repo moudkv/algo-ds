@@ -25,7 +25,7 @@ public class TreeRunner {
 	private void traversals() {				
 		TreeNode root = builder.buildBinarySearchTree();
 		
-		/*System.out.println("Recursive Pre Order traversal");
+		System.out.println("Recursive Pre Order traversal");
 		BinaryTreeTraversals.preOrderTraversalRecursive(root);
 		System.out.println(" ");
 		
@@ -39,7 +39,7 @@ public class TreeRunner {
 		
 		System.out.println("Iterative In Order traversal");
 		BinaryTreeTraversals.inOrderTraversalIterative(root);
-		System.out.println(" ");*/
+		System.out.println(" ");
 		
 		System.out.println("Recursive Post Order traversal");
 		BinaryTreeTraversals.postOrderTraversalRecursive(root);
