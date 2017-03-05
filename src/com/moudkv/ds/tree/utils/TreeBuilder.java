@@ -15,20 +15,20 @@ public class TreeBuilder {
 	 * @return TreeNode - root node for the tree
 	 * This method creates a binary search tree with sample values
 	 * 
-	 * 					7
-	 *                 / \
+	 * 					
+	 *                  7
 	 *                /   \
 	 *               /     \
-	 *              1       9
-	 *             / \     / \
-	 *            /   \   /   \
-	 *           0     3 8    10
-	 *                / \
-	 *               /   \
-	 *              2     5
-	 *                   / \
-	 *                  /   \
-	 *                 4     6
+	 *              1        9
+	 *            /   \     /  \
+	 *           /     \   /    \
+	 *          0       3 8    10
+	 *                 / \
+	 *                /   \
+	 *               2     5
+	 *                    / \
+	 *                   /   \
+	 *                  4     6
 	 * 
 	 */
 	public TreeNode buildBinarySearchTree() {

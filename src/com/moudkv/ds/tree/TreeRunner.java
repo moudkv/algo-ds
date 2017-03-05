@@ -48,6 +48,10 @@ public class TreeRunner {
 		System.out.println("Iterative Post Order traversal");
 		BinaryTreeTraversals.postOrderTraversalIterative(root);
 		System.out.println(" ");
+		
+		System.out.println("Level Order traversal");
+		BinaryTreeTraversals.levelOrderTraversal(root);
+		System.out.println(" ");
 				
 	}
 

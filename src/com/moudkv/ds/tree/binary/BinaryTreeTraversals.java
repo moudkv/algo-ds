@@ -3,6 +3,10 @@
  */
 package com.moudkv.ds.tree.binary;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Stack;
 
 import com.moudkv.ds.tree.TreeNode;
@@ -130,6 +134,49 @@ public class BinaryTreeTraversals {
 				}
 			}
 			
+		}		
+	}
+	
+	/**
+	 * Level Order traversal 
+	 * @param root
+	 */
+	public static void levelOrderTraversal(TreeNode root) {
+		if(root == null) {
+			return;
+		}
+		TreeNode currentNode = root;
+		List<List<TreeNode>> levelList = new ArrayList<List<TreeNode>>();
+		List<TreeNode> currentLevel = new LinkedList<TreeNode>();
+		currentLevel.add(currentNode);
+		levelList.add(currentLevel);
+		
+		getNextLevel(currentLevel, levelList);
+
+		ListIterator<List<TreeNode>> itr = levelList.listIterator();
+		while(itr.hasNext())	{
+			List<TreeNode> lst = (List<TreeNode>) itr.next();
+			ListIterator<TreeNode> itrLst = lst.listIterator();
+			System.out.print("[ ");
+			while(itrLst.hasNext()) {
+				System.out.print(itrLst.next().getValue() + " ");
+			}
+			System.out.println("]");
+		}
+ 	}
+	
+	private static void getNextLevel(List<TreeNode> currentlevel, 
+			List<List<TreeNode>> levelList) {
+		ListIterator<TreeNode> itr = currentlevel.listIterator();
+		List<TreeNode> nextLevel = new LinkedList<TreeNode>();
+		while(itr.hasNext()) {
+			TreeNode currentNode = (TreeNode) itr.next();
+			if(currentNode.getLeft()!=null) nextLevel.add(currentNode.getLeft());
+			if(currentNode.getRight()!=null) nextLevel.add(currentNode.getRight());
+		}
+		if(nextLevel.size() > 0)	{
+			levelList.add(nextLevel);
+			getNextLevel(nextLevel, levelList);
 		}		
 	}
 }
