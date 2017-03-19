@@ -179,4 +179,32 @@ public class BinaryTreeTraversals {
 			getNextLevel(nextLevel, levelList);
 		}		
 	}
+	
+	/**
+	 * Reverse Level Order traversal 
+	 * @param root
+	 */
+	public static void reverseLevelOrderTraversal(TreeNode root) {
+		if(root == null) {
+			return;
+		}
+		TreeNode currentNode = root;
+		List<List<TreeNode>> levelList = new ArrayList<List<TreeNode>>();
+		List<TreeNode> currentLevel = new LinkedList<TreeNode>();
+		currentLevel.add(currentNode);
+		levelList.add(currentLevel);
+		
+		getNextLevel(currentLevel, levelList);
+
+		ListIterator<List<TreeNode>> itr = levelList.listIterator();
+		while(itr.hasNext())	{
+			List<TreeNode> lst = (List<TreeNode>) itr.next();
+			ListIterator<TreeNode> itrLst = lst.listIterator();
+			System.out.print("[ ");
+			while(itrLst.hasNext()) {
+				System.out.print(itrLst.next().getValue() + " ");
+			}
+			System.out.println("]");
+		}
+ 	}
 }
